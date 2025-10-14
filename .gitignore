@@ -1,0 +1,31 @@
+# Betriebssystem-Dateien
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor-Dateien
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Log-Dateien
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js (falls später verwendet)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporäre Dateien
+*.tmp
+*.temp
