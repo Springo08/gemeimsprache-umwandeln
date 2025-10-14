@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCipher Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 CodeCipher Pro</h1>
+            <p>Professionelle Verschlüsselung und Entschlüsselung deiner Nachrichten</p>
+        </header>
+
+        <main>
+            <div class="encryption-section">
+                <h2>Verschlüsselung</h2>
+                <div class="input-group">
+                    <label for="encrypt-input">Text eingeben:</label>
+                    <textarea id="encrypt-input" placeholder="Gib hier deinen Text ein, der verschlüsselt werden soll..."></textarea>
+                </div>
+                <button id="encrypt-btn" class="btn encrypt-btn">Verschlüsseln</button>
+                <div class="output-group">
+                    <label for="encrypt-output">Verschlüsselter Text:</label>
+                    <textarea id="encrypt-output" readonly placeholder="Hier erscheint der verschlüsselte Text..."></textarea>
+                    <button id="copy-encrypt" class="btn copy-btn">Kopieren</button>
+                </div>
+            </div>
+
+            <div class="decryption-section">
+                <h2>Entschlüsselung</h2>
+                <div class="input-group">
+                    <label for="decrypt-input">Verschlüsselten Text eingeben:</label>
+                    <textarea id="decrypt-input" placeholder="Gib hier den verschlüsselten Text ein..."></textarea>
+                </div>
+                <button id="decrypt-btn" class="btn decrypt-btn">Entschlüsseln</button>
+                <div class="output-group">
+                    <label for="decrypt-output">Entschlüsselter Text:</label>
+                    <textarea id="decrypt-output" readonly placeholder="Hier erscheint der entschlüsselte Text..."></textarea>
+                    <button id="copy-decrypt" class="btn copy-btn">Kopieren</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 CodeCipher Pro. Alle Rechte vorbehalten.</p>
+                <nav>
+                    <a href="impressum.html">Impressum</a>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
