@@ -36,6 +36,7 @@ Automatische Aktualisierung der Website
 
 # Push zu GitHub
 echo -e "${BLUE}📤 Pushe zu GitHub...${NC}"
+echo -e "${YELLOW}💡 Falls nach Passwort gefragt wird, verwende dein GitHub Personal Access Token${NC}"
 if git push origin main; then
     echo -e "${GREEN}✅ Erfolgreich zu GitHub gepusht!${NC}"
     echo -e "${GREEN}🌐 Netlify wird automatisch deployen...${NC}"
