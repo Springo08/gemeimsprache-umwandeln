@@ -7,8 +7,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f1f3f4 100%);
     min-height: 100vh;
 }
 
@@ -24,17 +24,18 @@ body {
 header {
     text-align: center;
     margin-bottom: 40px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: linear-gradient(45deg, #495057, #6c757d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -42,7 +43,7 @@ header h1 {
 
 header p {
     font-size: 1.1rem;
-    color: #666;
+    color: #6c757d;
 }
 
 main {
@@ -55,34 +56,35 @@ main {
 
 .encryption-section,
 .decryption-section {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .encryption-section:hover,
 .decryption-section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
 .encryption-section h2,
 .decryption-section h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #495057;
     font-size: 1.5rem;
     text-align: center;
 }
 
 .encryption-section h2 {
-    color: #e74c3c;
+    color: #dc3545;
 }
 
 .decryption-section h2 {
-    color: #27ae60;
+    color: #28a745;
 }
 
 .input-group,
@@ -106,25 +108,26 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #555;
+    color: #495057;
 }
 
 textarea {
     width: 100%;
     min-height: 120px;
     padding: 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #dee2e6;
     border-radius: 10px;
     font-size: 1rem;
     font-family: inherit;
     resize: vertical;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
 }
 
 textarea:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #6c757d;
+    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.1);
 }
 
 textarea[readonly] {
@@ -145,29 +148,29 @@ textarea[readonly] {
 }
 
 .encrypt-btn {
-    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    background: linear-gradient(45deg, #dc3545, #c82333);
     color: white;
 }
 
 .encrypt-btn:hover {
-    background: linear-gradient(45deg, #c0392b, #a93226);
+    background: linear-gradient(45deg, #c82333, #bd2130);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
 }
 
 .decrypt-btn {
-    background: linear-gradient(45deg, #27ae60, #229954);
+    background: linear-gradient(45deg, #28a745, #218838);
     color: white;
 }
 
 .decrypt-btn:hover {
-    background: linear-gradient(45deg, #229954, #1e8449);
+    background: linear-gradient(45deg, #218838, #1e7e34);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
 }
 
 .copy-btn {
-    background: linear-gradient(45deg, #3498db, #2980b9);
+    background: linear-gradient(45deg, #6c757d, #5a6268);
     color: white;
     padding: 8px 16px;
     font-size: 0.9rem;
@@ -177,9 +180,9 @@ textarea[readonly] {
 }
 
 .copy-btn:hover {
-    background: linear-gradient(45deg, #2980b9, #1f618d);
+    background: linear-gradient(45deg, #5a6268, #495057);
     transform: translateY(-1px);
-    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 3px 10px rgba(108, 117, 125, 0.3);
 }
 
 .output-group {
@@ -194,11 +197,12 @@ textarea[readonly] {
 }
 
 footer {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-content {
@@ -210,19 +214,19 @@ footer {
 }
 
 .footer-content p {
-    color: #666;
+    color: #6c757d;
     margin: 0;
 }
 
 footer nav a {
-    color: #667eea;
+    color: #495057;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 footer nav a:hover {
-    color: #764ba2;
+    color: #212529;
 }
 
 /* Responsive Design */
@@ -273,7 +277,7 @@ footer nav a:hover {
     top: -35px;
     left: 50%;
     transform: translateX(-50%);
-    background: #333;
+    background: #495057;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
