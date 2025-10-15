@@ -90,6 +90,18 @@ main {
     margin-bottom: 20px;
 }
 
+.input-group {
+    position: relative;
+}
+/* Wrapper direkt um das Textarea für sauberes Positionieren des Clear-Buttons */
+.input-field {
+    position: relative;
+}
+/* verhindert, dass Text unter den Clear-Button läuft */
+.input-field textarea {
+    padding-right: 44px;
+}
+
 label {
     display: block;
     margin-bottom: 8px;
@@ -273,4 +285,36 @@ footer nav a:hover {
 
 .copy-btn.copied::after {
     opacity: 1;
+}
+
+/* Clear (×) Button – clean, dezent, Apple-like */
+.clear-btn {
+    position: absolute;
+    top: 12px; /* in die obere rechte Ecke der Leiste */
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(60, 60, 67, 0.08);
+    color: rgba(60, 60, 67, 0.7);
+    font-size: 14px; /* etwas kleiner für bessere Zentrierung */
+    display: none; /* wird per JS ein-/ausgeblendet */
+    box-shadow: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
+    /* exakte Zentrierung des Zeichens */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear-btn:hover {
+    background: rgba(60, 60, 67, 0.14);
+    color: rgba(60, 60, 67, 0.85);
+}
+
+.clear-btn:active {
+    transform: scale(0.96);
 }

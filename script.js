@@ -100,11 +100,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const encryptOutput = document.getElementById('encrypt-output');
     const encryptBtn = document.getElementById('encrypt-btn');
     const copyEncryptBtn = document.getElementById('copy-encrypt');
+    const clearEncryptBtn = document.getElementById('clear-encrypt-input');
     
     const decryptInput = document.getElementById('decrypt-input');
     const decryptOutput = document.getElementById('decrypt-output');
     const decryptBtn = document.getElementById('decrypt-btn');
     const copyDecryptBtn = document.getElementById('copy-decrypt');
+    const clearDecryptBtn = document.getElementById('clear-decrypt-input');
     
     // Verschlüsselung
     encryptBtn.addEventListener('click', function() {
@@ -165,6 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-Verschlüsselung bei Eingabe (optional)
     encryptInput.addEventListener('input', function() {
         const text = encryptInput.value;
+        if (clearEncryptBtn) {
+            clearEncryptBtn.style.display = text.length > 0 ? 'inline-flex' : 'none';
+        }
         if (text.length > 0) {
             const encrypted = encrypt(text);
             encryptOutput.value = encrypted;
@@ -172,10 +177,29 @@ document.addEventListener('DOMContentLoaded', function() {
             encryptOutput.value = '';
         }
     });
+
+    // Beim Fokus gesamten Text in der Eingabeleiste markieren (Refokus ersetzt Text direkt)
+    let encryptBlurredOnce = false;
+    encryptInput.addEventListener('blur', function() {
+        if (encryptInput.value.length > 0) {
+            encryptBlurredOnce = true;
+        }
+    });
+    encryptInput.addEventListener('focus', function(e) {
+        if (encryptInput.value.length > 0 && encryptBlurredOnce) {
+            // Auswahl verzögert setzen, damit sie stabil ist
+            setTimeout(() => {
+                encryptInput.select();
+            }, 0);
+        }
+    });
     
     // Auto-Entschlüsselung bei Eingabe (optional)
     decryptInput.addEventListener('input', function() {
         const text = decryptInput.value;
+        if (clearDecryptBtn) {
+            clearDecryptBtn.style.display = text.length > 0 ? 'inline-flex' : 'none';
+        }
         if (text.length > 0) {
             const decrypted = decrypt(text);
             decryptOutput.value = decrypted;
@@ -183,6 +207,41 @@ document.addEventListener('DOMContentLoaded', function() {
             decryptOutput.value = '';
         }
     });
+
+    // Beim Fokus gesamten Text markieren (Refokus ersetzt Text direkt)
+    let decryptBlurredOnce = false;
+    decryptInput.addEventListener('blur', function() {
+        if (decryptInput.value.length > 0) {
+            decryptBlurredOnce = true;
+        }
+    });
+    decryptInput.addEventListener('focus', function() {
+        if (decryptInput.value.length > 0 && decryptBlurredOnce) {
+            setTimeout(() => {
+                decryptInput.select();
+            }, 0);
+        }
+    });
+
+    // Clear-Buttons initialer Zustand
+    if (clearEncryptBtn) {
+        clearEncryptBtn.style.display = encryptInput.value.length > 0 ? 'inline-flex' : 'none';
+        clearEncryptBtn.addEventListener('click', function() {
+            encryptInput.value = '';
+            encryptOutput.value = '';
+            clearEncryptBtn.style.display = 'none';
+            encryptInput.focus();
+        });
+    }
+    if (clearDecryptBtn) {
+        clearDecryptBtn.style.display = decryptInput.value.length > 0 ? 'inline-flex' : 'none';
+        clearDecryptBtn.addEventListener('click', function() {
+            decryptInput.value = '';
+            decryptOutput.value = '';
+            clearDecryptBtn.style.display = 'none';
+            decryptInput.focus();
+        });
+    }
 });
 
 // Copy-Feedback Funktion

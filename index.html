@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeCipher Pro</title>
+    <title>CodeCipher Pro - Auto-Deploy Test</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,7 +18,10 @@
                 <h2>Verschlüsselung</h2>
                 <div class="input-group">
                     <label for="encrypt-input">Text eingeben:</label>
-                    <textarea id="encrypt-input" placeholder="Gib hier deinen Text ein, der verschlüsselt werden soll..."></textarea>
+                    <div class="input-field">
+                        <textarea id="encrypt-input" placeholder="Gib hier deinen Text ein, der verschlüsselt werden soll..."></textarea>
+                        <button id="clear-encrypt-input" class="clear-btn" aria-label="Eingabe löschen" type="button">×</button>
+                    </div>
                 </div>
                 <button id="encrypt-btn" class="btn encrypt-btn">Verschlüsseln</button>
                 <div class="output-group">
@@ -32,7 +35,10 @@
                 <h2>Entschlüsselung</h2>
                 <div class="input-group">
                     <label for="decrypt-input">Verschlüsselten Text eingeben:</label>
-                    <textarea id="decrypt-input" placeholder="Gib hier den verschlüsselten Text ein..."></textarea>
+                    <div class="input-field">
+                        <textarea id="decrypt-input" placeholder="Gib hier den verschlüsselten Text ein..."></textarea>
+                        <button id="clear-decrypt-input" class="clear-btn" aria-label="Eingabe löschen" type="button">×</button>
+                    </div>
                 </div>
                 <button id="decrypt-btn" class="btn decrypt-btn">Entschlüsseln</button>
                 <div class="output-group">

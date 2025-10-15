@@ -1,0 +1,17 @@
+{
+  "name": "geheimsprache-umwandeln",
+  "version": "1.0.0",
+  "description": "Automatische Deploy-Tools für Geheimsprache Umwandeln Website",
+  "main": "watch-files.js",
+  "scripts": {
+    "watch": "node watch-files.js",
+    "deploy": "./auto-deploy.sh",
+    "start": "node watch-files.js"
+  },
+  "keywords": ["auto-deploy", "file-watcher", "netlify"],
+  "author": "Leopold Springorum",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
