@@ -65,6 +65,13 @@ async function init() {
   if (signOutBtn) signOutBtn.addEventListener('click', signOut);
 
   const input = byId('message-input');
+  // Auto-resize textarea as user types
+  const autoResize = () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 200) + 'px';
+  };
+  autoResize();
+  input.addEventListener('input', autoResize);
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();

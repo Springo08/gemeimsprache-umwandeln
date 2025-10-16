@@ -16,13 +16,15 @@
 
 /* Message bubbles */
 .bubble { max-width: 72%; padding: 10px 12px; border-radius: 14px; position: relative; }
+/* Ensure long words/URLs wrap elegantly and preserve manual newlines */
+.bubble, .bubble * { overflow-wrap: anywhere; word-break: break-word; white-space: pre-wrap; }
 .bubble .meta { display: block; font-size: 11px; opacity: 0.6; margin-top: 6px; }
 .mine { align-self: flex-end; }
 .mine .bubble { background: linear-gradient(180deg, #3b82f6, #2563eb); color: #fff; border-top-right-radius: 6px; }
 .theirs .bubble { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-top-left-radius: 6px; }
 
 /* Inputs */
-#message-input { height: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.12); background: #fff; }
+#message-input { min-height: 44px; height: auto; padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.12); background: #fff; line-height: 1.4; overflow-y: auto; resize: none; }
 
 /* Clean input groups (Profile username, DM search) */
 .input-group { margin: 12px 0; }
