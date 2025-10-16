@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat – CodeCipher Pro</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script defer src="config.js"></script>
+    <script defer src="chat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chat</h1>
+            <nav>
+                <a href="../index.html" class="btn">Zurück</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="auth-section" id="auth-section">
+                <h2>Anmelden</h2>
+                <div class="input-group">
+                    <label for="email">E-Mail</label>
+                    <input id="email" type="email" placeholder="name@example.com">
+                </div>
+                <div class="input-group">
+                    <label for="password">Passwort</label>
+                    <input id="password" type="password" placeholder="••••••••">
+                </div>
+                <button id="sign-in" class="btn">Einloggen / Registrieren</button>
+                <div style="margin:8px 0; text-align:center; opacity:0.6;">oder</div>
+                <button id="magic-link" class="btn">Magic Link senden</button>
+            </section>
+
+            <section class="profile-section" id="profile-section" style="display:none;">
+                <h2>Profil</h2>
+                <div class="input-group">
+                    <label for="username">Benutzername</label>
+                    <input id="username" type="text" placeholder="deinname">
+                </div>
+                <button id="save-username" class="btn">Speichern</button>
+            </section>
+
+            <section class="chat-section" id="chat-section" style="display:none;">
+                <div class="rooms">
+                    <div class="rooms-header">
+                        <h2>Räume</h2>
+                        <button id="open-general" class="btn">Allgemein</button>
+                        <div class="input-group" style="margin-top:8px;">
+                            <label for="dm-username">Privat: Nutzername</label>
+                            <div style="display:grid; grid-template-columns: 1fr auto; gap: 8px;">
+                                <input id="dm-username" type="text" placeholder="benutzername">
+                                <button id="start-dm" class="btn">Start</button>
+                            </div>
+                        </div>
+                    </div>
+                    <ul id="room-list" class="list"></ul>
+                </div>
+
+                <div class="messages">
+                    <div class="messages-header">
+                        <h2 id="active-room-name">Nachrichten</h2>
+                    </div>
+                    <ul id="message-list" class="list messages-list"></ul>
+                    <div class="composer">
+                        <input id="message-input" type="text" placeholder="Nachricht schreiben...">
+                        <button id="send" class="btn">Senden</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 CodeCipher Pro</p>
+                <button id="sign-out" class="btn">Abmelden</button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
